@@ -1,0 +1,11 @@
+.grid{
+  --cols: var(--grid-cols);
+  display: grid;
+  grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
+  gap: var(--gutter);
+  transition: grid-template-columns 120ms linear;
+}
+
+@media (max-width: 1200px){ .grid{ --cols: 3; } }
+@media (max-width: 900px){ .grid{ --cols: 2; } }
+@media (max-width: 600px){ .grid{ --cols: 1; } }

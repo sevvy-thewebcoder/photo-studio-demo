@@ -1,0 +1,52 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import { Image } from "astro:assets";
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout pageTitle={frontmatter.title}>
+	<section class="project-hero">
+		<h1 class="project-title">{frontmatter.title}</h1>
+		<div class="project-meta">
+			{frontmatter.client && <div>Client: {frontmatter.client}</div>}
+		</div>
+		{frontmatter.description && <p>{frontmatter.description}</p>}
+	</section>
+
+	<section class="project-body">
+		{
+			frontmatter.images.map(({ url, alt }: { url: string; alt: string }) => {
+				return (
+					<Image
+						src={url}
+						alt={alt}
+						width={800}
+						height={600}
+						class="project-image"
+					/>
+				);
+			})
+		}
+	</section>
+
+	<slot />
+</BaseLayout>
+<style>
+	a {
+		color: #00539f;
+	}
+
+	.tags {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.tag {
+		margin: 0.25em;
+		border: dotted 1px #a1a1a1;
+		border-radius: 0.5em;
+		padding: 0.5em 1em;
+		font-size: 1.15em;
+		background-color: #f8fcfd;
+	}
+</style>

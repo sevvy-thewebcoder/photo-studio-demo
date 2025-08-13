@@ -1,16 +1,12 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import ProjectGrid from "../components/ProjectGrid.tsx";
 
+export const prerender = false;
+const projects = await getCollection("project");
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="Archive — Portfolio">
+	<ProjectGrid projects={projects} client:visible />
+</BaseLayout>

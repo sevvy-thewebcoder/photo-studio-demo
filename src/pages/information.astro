@@ -1,0 +1,14 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+export const prerender = false; // This page renders on the server in SSR/hybrid mode
+
+const serverTime = new Date().toISOString();
+---
+<BaseLayout title="Information">
+  <section style="max-width: 720px; margin: 32px auto; line-height: 1.6;">
+    <h1>Information</h1>
+    <p>This page demonstrates SSR capability. It shows the server time at render:</p>
+    <pre><code>{serverTime}</code></pre>
+    <p>Switch your build to SSR/Hybrid as described in <code>astro.config.mjs</code> to render this page on the server.</p>
+  </section>
+</BaseLayout>

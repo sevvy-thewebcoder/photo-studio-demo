@@ -1,0 +1,37 @@
+---
+import Logo from '../components/Logo.astro';
+import Navbar from '../components/Navbar.astro';
+import GridController from '../components/GridController.tsx';
+const { title = 'Portfolio' } = Astro.props;
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <link rel="stylesheet" href="/src/styles/base.css" />
+    <link rel="stylesheet" href="/src/styles/header.css" />
+    <link rel="stylesheet" href="/src/styles/grid.css" />
+    <link rel="stylesheet" href="/src/styles/card.css" />
+    <link rel="stylesheet" href="/src/styles/project.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container topbar">
+        <Navbar />
+        <Logo text="SUSAN BUTH" />
+        <div class="right-controls">
+          <GridController client:idle />
+        </div>
+      </div>
+      <div class="container">
+        <div class="tabs">
+          <!-- The tabs are handled within GridController; markup kept for spacing -->
+        </div>
+      </div>
+    </header>
+    <main class="container">
+      <slot />
+    </main>
+  </body>
+</html>

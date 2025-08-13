@@ -1,0 +1,32 @@
+:root{
+  --bg: #fff;
+  --fg: #111;
+  --muted: #666;
+  --grid-cols: 4;
+  --gutter: 12px;
+  --max-w: 1280px;
+}
+
+*{ box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body{
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+a{ color: inherit; text-decoration: none; }
+img{ max-width: 100%; display: block; }
+
+.container{
+  margin: 0 auto;
+  width: min(100%, var(--max-w));
+  padding-inline: 16px;
+}
+
+.visually-hidden{
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden; clip: rect(1px,1px,1px,1px);
+  white-space: nowrap;
+}
