@@ -2,11 +2,11 @@
 import Logo from "../components/Logo.astro";
 import Navbar from "../components/Navbar.astro";
 import GridController from "../components/GridController.tsx";
-import Base from "../styles/base.css";
-import Header from "../styles/header.css";
-import Grid from "../styles/grid.css";
-import Card from "../styles/card.css";
-import Project from "../styles/project.css";
+import "../styles/base.css";
+import "../styles/header.css";
+import "../styles/grid.css";
+import "../styles/card.css";
+import "../styles/project.css";
 const { title = "Portfolio" } = Astro.props;
 ---
 
@@ -15,11 +15,6 @@ const { title = "Portfolio" } = Astro.props;
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>{title}</title>
-		<link rel="stylesheet" href={Base} />
-		<link rel="stylesheet" href={Header} />
-		<link rel="stylesheet" href={Grid} />
-		<link rel="stylesheet" href={Card} />
-		<link rel="stylesheet" href={Project} />
 	</head>
 	<body>
 		<header class="site-header">
