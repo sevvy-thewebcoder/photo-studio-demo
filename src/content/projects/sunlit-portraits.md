@@ -1,14 +1,13 @@
 ---
-title: Sunlit Portraits
-slug: sunlit-portraits
-type: portrait
+title: "Sunlit Portraits"
+type: "portrait"
 coverImage: "/placeholder.svg"
-client: Schön! Magazine
+client: "Schön! Magazine"
 images:
   [
     { url: "/placeholder.svg", alt: Placeholder },
     { url: "/placeholder.svg", alt: Placeholder },
     { url: "/placeholder.svg", alt: Placeholder },
   ]
-description: A study of light and shadow in minimal composition.
+description: "A study of light and shadow in minimal composition."
 ---

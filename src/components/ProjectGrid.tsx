@@ -5,9 +5,9 @@ import { activeFilter } from '../lib/stores';
 import { revealCards } from '../lib/gsapAnimations';
 
 type Project = {
+  id: string;
   data: {
     title: string;
-    slug: string;
     type: 'fashion' | 'portrait' | 'body-swim';
     coverImage: string;
   }
@@ -31,10 +31,10 @@ export default function ProjectGrid({ projects }: Props){
 
   return (
     <div ref={containerRef} className="grid">
-      {list.map(({ data }) => (
+      {list.map(({ data, id }) => (
         <ProjectCard
-          key={data.slug}
-          href={`/projects/${data.slug}`}
+          key={id}
+          href={`/projects/${id}`}
           title={data.title}
           type={data.type}
           cover={data.coverImage}

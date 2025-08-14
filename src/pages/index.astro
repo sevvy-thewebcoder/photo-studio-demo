@@ -4,9 +4,16 @@ import { getCollection } from "astro:content";
 import ProjectGrid from "../components/ProjectGrid.tsx";
 
 export const prerender = false;
-const projects = await getCollection("project");
+const projects = (await getCollection("project")).map((item) => ({
+	id: item.id,
+	data: {
+		title: item.data.title,
+		type: item.data.type,
+		coverImage: item.data.coverImage,
+	},
+}));
 ---
 
 <BaseLayout title="Archive — Portfolio">
-	<ProjectGrid projects={projects} client:visible />
+	<ProjectGrid projects={projects} client:load />
 </BaseLayout>
